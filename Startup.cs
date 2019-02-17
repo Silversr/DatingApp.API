@@ -111,7 +111,7 @@ namespace DatingApp.API
                                 if (error != null)
                                 {
                                     context.Response.AddApplicationError(error.Error.Message);
-                                    //await context.Response.WriteAsync(error.Error.Message);
+                                    await context.Response.WriteAsync(error.Error.Message);
                                 }
                             }
 
