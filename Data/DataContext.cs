@@ -15,6 +15,7 @@ namespace DatingApp.API.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Value> Values { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Photo> Photos { get; set; }
 
 
 
@@ -24,7 +25,7 @@ namespace DatingApp.API.Data
         {
             Console.WriteLine("Start Get Value");
             //Thread.Sleep(3000);
-            var t = Task.Run(() => { Console.WriteLine("start sleep"); Thread.Sleep(3000); Console.WriteLine("stop sleep"); });
+            var t = Task.Run(() => { Console.WriteLine("start sleep"); Task.Delay(3000); Console.WriteLine("stop sleep"); });
             Console.WriteLine("DoIndepentWorks");
             await t;
             Console.WriteLine("After await t, should after stop sleep");
